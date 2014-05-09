@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>        
+<!DOCTYPE hibernate-mapping PUBLIC         
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"             
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.sis.eims4.entity.Dept" table="web_dept">
+		<id name="deptno" type="integer" column="deptno">
+			<!-- generator用来指明主键生成方式 -->
+			<!-- MYSQL为identity -->
+			<generator class="identity"></generator>
+		</id>
+		<property name="dname" type="string" column="dname"></property>
+		<property name="loc" type="string" column="loc"></property>
+	</class>
+</hibernate-mapping>

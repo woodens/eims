@@ -1,0 +1,32 @@
+/* “ü—Í€–Ú_‘SŠp */
+.input-zenkaku {
+    text-align: left;
+    ime-mode: active;
+}
+
+.input-hankaku {
+    text-align: right;
+    ime-mode: disabled;
+}
+
+/* “ü—Í€–Ú_”’l */
+.input-number {
+    text-align: right;
+    ime-mode: disabled;
+}
+
+table { font-size: 14px; }
+
+
+A:link {
+	COLOR: #0000FF; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #0000FF; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #0000FF; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0000FF; TEXT-DECORATION: none
+}

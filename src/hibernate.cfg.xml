@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+     <!-- 1.数据库连接信息 -->
+     <!-- MYSQL -->
+     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+     <property name="connection.url">jdbc:mysql://localhost:3306/emp_info</property>
+     <property name="connection.username">root</property>
+     <property name="connection.password">root</property>
+    <!-- 2.Hibernate配置信息 -->    
+
+    <!-- dialect是方言，用于配置生成针对那个数据库的SQL语句 -->    
+    <!-- Hibernate提供的方言类，用于封装某种特定数据库方言 -->    
+    <!-- MYSQL -->    
+    <property name="dialect">    
+    org.hibernate.dialect.MySQL5Dialect
+    </property>    
+    <!-- 将执行sql打印到控制台，一般用于sql调优 -->
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql ">true</property>     
+
+    <!-- 3.在配置文件中关联映射文件 -->    
+    <mapping resource="com/sis/eims4/entity/Dept.hbm.xml"/>    
+</session-factory>    
+</hibernate-configuration>

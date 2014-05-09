@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="app,error,format"/>
+
+    <package name="default" namespace="/" extends="json-default">
+        <default-action-ref name="index" />
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">Search!access</param>
+                <param name="namespace">/emp</param>
+            </result>
+        </action>
+     </package>
+     <package name="emp" namespace="/emp" extends="json-default">
+        <!-- ============================================================Search  -->
+        <action name="Search" class="com.sis.eims4.action.SearchAction">
+            <result name="success">/WEB-INF/view/EmpSearch.jsp</result>
+            <result name="input">/WEB-INF/view/EmpSearch.jsp</result>
+        </action>
+        <action name="local" class="com.sis.eims4.action.SearchAction" method="local">
+            <result type="json">
+            	<!-- 代表从此处开始进行序列化 -->
+            	<param name="root">dept</param>
+            </result>
+        </action>
+        <!-- =============================================================Update -->
+        <action name="Update" class="com.sis.eims4.action.UpdAndDelAction">
+            <result name="success">/WEB-INF/view/EmpUpdate.jsp</result>
+            <result name="input">/WEB-INF/view/SystemError.jsp</result>
+            <result name="login">/WEB-INF/view/EmpConfirm.jsp</result>
+        </action>
+        <!-- =============================================================Add -->
+        <action name="Add" class="com.sis.eims4.action.AddAction">
+            <result name="success">/WEB-INF/view/EmpAdd.jsp</result>
+            <result name="input">/WEB-INF/view/SystemError.jsp</result>
+            <result name="login">/WEB-INF/view/EmpConfirm.jsp</result>
+        </action>
+        <!-- =============================================================Confirm -->
+        <action name="Confirm" class="com.sis.eims4.action.ConfirmAction">
+            <interceptor-ref name="token"></interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result name="invalid.token">/WEB-INF/view/EndProc.jsp</result>
+            <result name="login">/WEB-INF/view/EndProc.jsp</result>
+            <result name="input">/WEB-INF/view/SystemError.jsp</result>
+            <result name="addBack">/WEB-INF/view/EmpAdd.jsp</result>
+            <result name="updateBack">/WEB-INF/view/EmpUpdate.jsp</result>
+        </action>
+        <!-- =============================================================Error -->
+        <action name="Error" class="com.sis.eims4.action.ErrorAction">
+            <result name="addBack">/WEB-INF/view/EmpAdd.jsp</result>
+            <result name="searchBack">/WEB-INF/view/EmpSearch.jsp</result>
+            <result name="updateBack">/WEB-INF/view/EmpUpdate.jsp</result>
+            <result name="input">/WEB-INF/view/SystemError.jsp</result>
+        </action>
+    </package>
+</struts>
