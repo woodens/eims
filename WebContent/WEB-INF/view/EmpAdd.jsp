@@ -5,7 +5,7 @@
 <TITLE>社員新規</TITLE>
 <%@include file="/js/common-js.jsp" %>
 <%@include file="/WEB-INF/common/common.jsp" %>
-<link rel="stylesheet" href="cs/common.css" type="text/css">
+<link rel="stylesheet" href="/cs/common.css" type="text/css">
 <link rel="shortcut icon" href="/imag/favicon.ico" type="image/x-icon" />
 </HEAD>
 <BODY MARGINWIDTH="0" MARGINHEIGHT="0" TOPMARGIN="0" LEFTMARGIN="0">
