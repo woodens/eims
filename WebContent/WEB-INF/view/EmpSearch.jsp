@@ -5,7 +5,7 @@
 <title>初めましで</title>
 <%@include file="/WEB-INF/common/common.jsp" %>
 <link rel="stylesheet" href="cs/common.css" type="text/css">
-<link rel="shortcut icon" href="imag/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/imag/favicon.ico" type="image/x-icon" />
 <script type="text/javascript">
 	$(function() {
 		getLocal();
